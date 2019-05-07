@@ -4,6 +4,7 @@ struct Node {
     Node* next;
 }; */
 /* Should return data of middle node. If linked list is empty, then  -1*/
+
 typedef struct Node* node;
 int getMiddle(Node *head)
 {
