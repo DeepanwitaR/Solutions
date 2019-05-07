@@ -1,12 +1,13 @@
   //Sort the list of 0's,1's and 2's
   //The input list will have at least one element  
   //Node is defined as 
-  struct Node
+  /*struct Node
   {
      int data;
      Node *next;
   }
 */
+// solution just the function.
 void swap(Node *x,Node *y)
 {
     int temp;
