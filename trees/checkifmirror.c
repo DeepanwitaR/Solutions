@@ -58,7 +58,7 @@ int checkequal() {
 bool isSymmetric(struct Node* root)
 {   
     leftin=0;rightin=0;
-	if((root->left)!=(root->right))
+	if((root->left)->key!=(root->right)->key)
 	    return false;
 	
      preorder(root->left); //returns the size of the array.
