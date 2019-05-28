@@ -15,7 +15,7 @@ int max(int a, int b){
 }
 int height(node root) {
     if(root==NULL) {
-        return -1;
+        return 0;
     }
     return 1+max(height(root->left),height(root->right));
 }
@@ -24,5 +24,5 @@ int diameter(Node* node)
    if(node==NULL)
         return -1;
     else 
-        return 2+(height(node->right))+height((node->left));
+        return 1+(height(node->right))+height((node->left));
 }
