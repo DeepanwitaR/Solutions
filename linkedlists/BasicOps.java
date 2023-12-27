@@ -18,10 +18,62 @@ public class Solution {
             }
         }
         // print the LL
+        printLL(head);
+        // insert an element in the front
+        head = insertAtHead(-1, head);
+        // print the LL
+        printLL(head);
+        // insert an element in the end
+        head = insertAtTail(-1, head); 
+        // print the LL
+        printLL(head);
+        // insert an element after a certain one in the list
+        head = insertAfterGivenElementValue(-1, 2, head);
+        // print the LL
+        printLL(head);
+
+    }
+
+    public static void printLL(Node head) {
+        // print the LL
         while (head != null) {
             System.out.println("LL element with value: " + head.val);
             head = head.next;
         }
+        System.out.println("----------------");
+    }
+
+    public static Node insertAtHead(int value, Node head) {
+        Node newNode = new Node(value);
+        newNode.next = head;
+        head = newNode;
+        return head;
+    }
+
+    public static Node insertAtTail(int value, Node head) {
+        Node newNode = new Node(value);
+        newNode.next = null;
+        Node tail = head;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+        tail.next = newNode;
+        return head;
+    }
+
+    public static Node insertAfterGivenElementValue(int value, int llno, Node head) {
+        Node newNode = new Node(value);
+        Node tail = head, temp = null;
+        while (tail != null & tail.val != llno) {
+            tail = tail.next;
+        }
+        if (tail != null) {
+            // means we have found the element and tail points to it.
+            temp = tail.next;
+            tail.next = newNode;
+            newNode.next = temp;
+        }
+        return head;
     }
 }
 
@@ -32,3 +84,35 @@ public class Node {
         this.val = val;
     }
 }
+
+// Sample Solution
+// LL element with value: 0
+// LL element with value: 1
+// LL element with value: 2
+// LL element with value: 3
+// LL element with value: 4
+// ----------------
+// LL element with value: -1
+// LL element with value: 0
+// LL element with value: 1
+// LL element with value: 2
+// LL element with value: 3
+// LL element with value: 4
+// ----------------
+// LL element with value: -1
+// LL element with value: 0
+// LL element with value: 1
+// LL element with value: 2
+// LL element with value: 3
+// LL element with value: 4
+// LL element with value: -1
+// ----------------
+// LL element with value: -1
+// LL element with value: 0
+// LL element with value: 1
+// LL element with value: 2
+// LL element with value: -1
+// LL element with value: 3
+// LL element with value: 4
+// LL element with value: -1
+// ----------------
