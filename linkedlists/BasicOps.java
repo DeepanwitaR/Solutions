@@ -75,6 +75,24 @@ public class Solution {
         }
         return head;
     }
+    public static Node deleteElementAtValue(int value, Node head) {
+        
+        if (head== null) {
+            return head;
+        }
+        if (head.val == value) {
+            return head.next;
+        }
+        Node prev = null,head1=head;
+        while (head != null && head.val != value) {
+            prev=head;
+            head=head.next;
+        }
+        if (head != null && head.val == value){
+            prev.next=head.next;
+        }
+        return head1;
+    }
 }
 
 public class Node {
